@@ -1,7 +1,10 @@
 import express from "express"; // importing express
+import dotenv from "dotenv"; // importing dotenv
 import { connectDB } from "./config/db.js"; // importing the connectDB function from the db.js file
 import Product from "./models/product.model.js"; // importing the Product model from the product.model.js file
+import mongoose from "mongoose"; // importing mongoose
 
+dotenv.config(); // loading environment variables from the .env file
 const app = express(); // creating an instance of express
 
 app.use(express.json()); // middleware to parse JSON request bodies allows us to parse JSON request bodies
@@ -41,6 +44,27 @@ app.post("/api/products", async (req, res) => {
     res.status(201).json({ success: true, data: newProduct }); // sending a response with status 201 (created)
   } catch (error) {
     console.error("error in creating product", error.message); // logging the error to the console
+    res.status(500).json({ success: false, message: error.message }); // sending a response with status 500 (internal server error)
+  }
+}); // defining a route for the products URL
+
+// products PUT:URL
+app.put("/api/products/:id", async (req, res) => {
+  const { id } = req.params; // getting the product ID from the request parameters
+
+  const product = req.body; // getting the products from the request body
+
+  if (!mongoose.Types.ObjectId.isValid(id)) {
+    res.status(404).json({ success: false, message: "invalid product id" }); // sending a response with status 404 (not found)
+  }
+
+  try {
+    const updatedProduct = await Product.findByIdAndUpdate(id, product, {
+      new: true,
+    }); // updating the product in the database using the ID
+    res.status(200).json({ success: true, data: updatedProduct }); // sending a response with status 200 (OK)
+  } catch (error) {
+    console.error("error in updating product", error.message); // logging the error to the console
     res.status(500).json({ success: false, message: error.message }); // sending a response with status 500 (internal server error)
   }
 }); // defining a route for the products URL
