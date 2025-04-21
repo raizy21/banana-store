@@ -33,6 +33,20 @@ app.post("/api/products", async (req, res) => {
   }
 }); // defining a route for the products URL
 
+// products DELETE:URL
+app.delete("/api/products/:id", async (req, res) => {
+  const { id } = req.params; // getting the product ID from the request parameters
+  // console.log(id); // logging the product ID to the console
+
+  try {
+    await Product.findByIdAndDelete(id); // deleting the product from the database using the ID
+    res.status(200).json({ success: true, message: "product deleted" }); // sending a response with status 200 (OK)
+  } catch (error) {
+    res.status(404).json({ success: false, message: "product not found" }); // sending a response with status 404 (not found)
+    // res.status(500).json({ success: false, message: error.message }); // sending a response with status 500 (internal server error)
+  }
+}); // deleting the product from the database
+
 app.listen(5000, () => {
   connectDB(); // calling the connectDB function to connect to the database
   // starting the server on port 5000
