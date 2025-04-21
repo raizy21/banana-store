@@ -1,3 +1,9 @@
+<p align="center">
+  <img src="./logo.png" alt="Banana Store Logo" width="200"/>
+</p>
+
+<h1 align="center">🍌 Banana Store</h1>
+
 # 🛍️ Project Summary: Banana Store
 
 The Banana Store is a simple project built with **Node.js**, **Express.js**, and **MongoDB**.
@@ -80,6 +86,7 @@ banana-store/
 ├── node_modules/ # node.js dependencies (auto-generated)
 ├── .env # environment variables (e.g., MONGO_URI)
 ├── .gitignore # ignored files and folders for Git
+├── logo.png   # logo for this app
 ├── package-lock.json # exact version lock for installed dependencies
 ├── package.json # project metadata, dependencies, and scripts
 ├── README.md # project documentation (this file)
@@ -107,7 +114,7 @@ All data models are defined in the `models/` folder using [Mongoose](https://mon
 
 Example: **Product Model** (`models/Product.js`)
 
-````js
+```js
 const ProductSchema = new mongoose.Schema({
   name: {
     type: String,
@@ -122,7 +129,7 @@ const ProductSchema = new mongoose.Schema({
     required: true,
   },
 });
-
+```
 
 ## 📡 API Endpoints Overview
 
@@ -164,7 +171,7 @@ GET /api/products
     }
   ]
 }
-````
+```
 
 ### ➕ Create a New Product
 
