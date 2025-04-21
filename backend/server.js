@@ -12,7 +12,7 @@ app.get("/", (req, res) => {
   res.send("hello from node js!"); // sending a response to the client
 }); // end of the route
 
-// products URL
+// products POST:URL
 app.post("/api/products", async (req, res) => {
   const product = req.body; // getting the products from the request body
 

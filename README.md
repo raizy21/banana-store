@@ -77,6 +77,32 @@ npm run dev
 
 ---
 
+## 📡 API Endpoints Overview
+
+This section outlines the available backend API routes for the Banana Store project. These endpoints support key functionalities such as fetching products, searching in real-time.
+
+---
+
+### ➕ Create a New Product
+
+> **[POST]** `/api/products` – _Add a new product to the store_
+
+This endpoint allows you to create and store a new product in the MongoDB database.
+
+#### 📥 Request Body
+
+Send a JSON object with the following required fields:
+
+```json
+{
+  "name": "banana-1",
+  "price": 21.21,
+  "image": "https://example.com/banana-1.jpg"
+}
+```
+
+---
+
 # 🗃️ Database
 
 I use [🍃 MongoDB](https://www.mongodb.com/) as database solution.
@@ -105,3 +131,7 @@ I use [🍃 MongoDB](https://www.mongodb.com/) as database solution.
 - 🚀 [Express.js Guide](https://expressjs.com/en/starter/guide.html)
 - 🍃 [MongoDB Documentation](https://www.mongodb.com/docs/)
 - 🔗 [Mongoose Docs](https://mongoosejs.com/docs/)
+
+```
+
+```
