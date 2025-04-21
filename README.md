@@ -97,6 +97,7 @@ This endpoint retrieves a list of all products stored in the MongoDB database.
 - **Content-Type:** `application/json`
 
 ```json
+GET /api/products
 {
   "success": true,
   "data": [
@@ -128,13 +129,49 @@ This endpoint allows you to create and store a new product in the MongoDB databa
 
 Send a JSON object with the following required fields:
 
+#### ✅ Success Response
+
+- **Status Code:** `200 OK`
+- **Content-Type:** `application/json`
+
 **Example:**
 
 ```json
+POST /api/products
 {
   "name": "banana-1",
   "price": 21.21,
   "image": "https://example.com/banana-1.jpg"
+}
+```
+
+### ✏️ Update a Product
+
+> **[PUT]** `/api/products/:id` – _Update an existing product by ID_
+
+This endpoint updates an existing product in the MongoDB database using its unique ID. You must provide the fields you want to update in the request body.
+
+---
+
+#### 🔗 URL Parameter
+
+- `:id` – The `_id` of the product to update
+
+**Example:**
+
+#### ✅ Success Response
+
+- **Status Code:** `200 OK`
+- **Content-Type:** `application/json`
+
+```json
+
+PUT /api/products/605c5ef2e3a14f0015c9e9f4
+
+{
+  "name": "banana-expert",
+  "price": 21.21,
+  "image": "https://example.com/banana-expert.jpg"
 }
 ```
 
@@ -147,6 +184,11 @@ This endpoint allows you to delete an existing product from the MongoDB database
 #### 🔗 URL Parameter
 
 - `:id` – The unique identifier (`_id`) of the product to be deleted
+
+#### ✅ Success Response
+
+- **Status Code:** `200 OK`
+- **Content-Type:** `application/json`
 
 **Example:**
 
