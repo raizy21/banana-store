@@ -93,12 +93,30 @@ This endpoint allows you to create and store a new product in the MongoDB databa
 
 Send a JSON object with the following required fields:
 
+**Example:**
+
 ```json
 {
   "name": "banana-1",
   "price": 21.21,
   "image": "https://example.com/banana-1.jpg"
 }
+```
+
+### 🗑️ Delete a Product
+
+> **[DELETE]** `/api/products/:id` – _Remove a product by its ID_
+
+This endpoint allows you to delete an existing product from the MongoDB database by providing its unique ID.
+
+#### 🔗 URL Parameter
+
+- `:id` – The unique identifier (`_id`) of the product to be deleted
+
+**Example:**
+
+```json
+DELETE /api/products/605c5ef2e3a14f0015c9e9f4
 ```
 
 ---
