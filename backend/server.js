@@ -12,6 +12,17 @@ app.get("/", (req, res) => {
   res.send("hello from node js!"); // sending a response to the client
 }); // end of the route
 
+// products GET:URL
+app.get("/api/products", async (req, res) => {
+  try {
+    const products = await Product.find({}); // fetching all products from the database
+    res.status(200).json({ success: true, data: products }); // sending a response with status 200 (OK)
+  } catch (error) {
+    console.error("error in fetching products", error.message); // logging the error to the console
+    res.status(500).json({ success: false, message: error.message }); // sending a response with status 500 (internal server error)
+  } // defining a route for the products URL
+}); // defining a route for the products URL
+
 // products POST:URL
 app.post("/api/products", async (req, res) => {
   const product = req.body; // getting the products from the request body
@@ -29,6 +40,7 @@ app.post("/api/products", async (req, res) => {
     await newProduct.save(); // saving the new product to the database
     res.status(201).json({ success: true, data: newProduct }); // sending a response with status 201 (created)
   } catch (error) {
+    console.error("error in creating product", error.message); // logging the error to the console
     res.status(500).json({ success: false, message: error.message }); // sending a response with status 500 (internal server error)
   }
 }); // defining a route for the products URL
@@ -42,6 +54,7 @@ app.delete("/api/products/:id", async (req, res) => {
     await Product.findByIdAndDelete(id); // deleting the product from the database using the ID
     res.status(200).json({ success: true, message: "product deleted" }); // sending a response with status 200 (OK)
   } catch (error) {
+    console.error("error in deleting product", error.message); // logging the error to the console
     res.status(404).json({ success: false, message: "product not found" }); // sending a response with status 404 (not found)
     // res.status(500).json({ success: false, message: error.message }); // sending a response with status 500 (internal server error)
   }

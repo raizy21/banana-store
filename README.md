@@ -149,7 +149,3 @@ I use [🍃 MongoDB](https://www.mongodb.com/) as database solution.
 - 🚀 [Express.js Guide](https://expressjs.com/en/starter/guide.html)
 - 🍃 [MongoDB Documentation](https://www.mongodb.com/docs/)
 - 🔗 [Mongoose Docs](https://mongoosejs.com/docs/)
-
-```
-
-```
