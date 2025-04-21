@@ -20,7 +20,7 @@ app.get("/api/products", async (req, res) => {
   } catch (error) {
     console.error("error in fetching products", error.message); // logging the error to the console
     res.status(500).json({ success: false, message: error.message }); // sending a response with status 500 (internal server error)
-  } // defining a route for the products URL
+  }
 }); // defining a route for the products URL
 
 // products POST:URL

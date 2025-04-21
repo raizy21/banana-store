@@ -83,6 +83,41 @@ This section outlines the available backend API routes for the Banana Store proj
 
 ---
 
+### 📦 Get All Products
+
+> **[GET]** `/api/products` – _Fetch all products from the store_
+
+This endpoint retrieves a list of all products stored in the MongoDB database.
+
+---
+
+#### ✅ Success Response
+
+- **Status Code:** `200 OK`
+- **Content-Type:** `application/json`
+
+```json
+{
+  "success": true,
+  "data": [
+    {
+      "_id": "605c5ef2e3a14f0015c9e9f4",
+      "name": "banana-1",
+      "price": "21.21",
+      "image": "https://example.com/banana-1.jpg",
+      "__v": 0
+    },
+    {
+      "_id": "605c5ef2e3a14f0015c9e9f5",
+      "name": "banana-2",
+      "price": 899.21,
+      "image": "https://example.com/banana-2.jpg",
+      "__v": 0
+    }
+  ]
+}
+```
+
 ### ➕ Create a New Product
 
 > **[POST]** `/api/products` – _Add a new product to the store_
