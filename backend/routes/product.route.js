@@ -19,4 +19,5 @@ router.put("/:id", updateProduct); // defining a route for the products URL
 
 // products DELETE:URL
 router.delete("/:id", deleteProduct); // deleting the product from the database
+
 export default router; // exporting the router object

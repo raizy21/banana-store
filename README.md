@@ -1,6 +1,6 @@
 # 🛍️ Project Summary: Banana Store
 
-The Banana Store is a simple backend project built with **Node.js**, **Express.js**, and **MongoDB**.
+The Banana Store is a simple project built with **Node.js**, **Express.js**, and **MongoDB**.
 
 It is designed to store and manage product data , including:
 
@@ -63,6 +63,30 @@ npm run dev
 
 ---
 
+### 🗂️ Project Structure
+
+The Banana Store is a full-stack application structured into two main parts: a **backend** powered by Node.js, Express, and MongoDB, and a **frontend** built with React.
+
+```
+banana-store/
+
+├── frontend/ # frontend (React)
+├── backend/ # backend source code (Node.js + Express)
+│ ├── config/ # MongoDB connection setup (e.g., db.js)
+│ ├── controllers/ # route logic and request handling (e.g., product.controller.js)
+│ ├── models/ # Mongoose models for MongoDB (e.g., product.model.js)
+│ ├── routes/ # Express route definitions (e.g., product.route.js)
+│ └── server.js # Main entry point for the backend server
+├── node_modules/ # node.js dependencies (auto-generated)
+├── .env # environment variables (e.g., MONGO_URI)
+├── .gitignore # ignored files and folders for Git
+├── package-lock.json # exact version lock for installed dependencies
+├── package.json # project metadata, dependencies, and scripts
+├── README.md # project documentation (this file)
+```
+
+---
+
 ## 🧠 Backend
 
 - 🏗️ Set up a Node.js server using the built-in `http` module in `package.json`.
@@ -76,6 +100,29 @@ npm run dev
   - ❌ Logs `"MongoDB connection error:", error` if it fails
 
 ---
+
+### 📦 Models
+
+All data models are defined in the `models/` folder using [Mongoose](https://mongoosejs.com/).
+
+Example: **Product Model** (`models/Product.js`)
+
+````js
+const ProductSchema = new mongoose.Schema({
+  name: {
+    type: String,
+    required: true,
+  },
+  price: {
+    type: Number,
+    required: true,
+  },
+  image: {
+    type: String,
+    required: true,
+  },
+});
+
 
 ## 📡 API Endpoints Overview
 
@@ -117,7 +164,7 @@ GET /api/products
     }
   ]
 }
-```
+````
 
 ### ➕ Create a New Product
 

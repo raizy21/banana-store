@@ -1,6 +1,7 @@
 import Product from "../models/product.model.js"; // importing the Product model
 import mongoose from "mongoose"; // importing mongoose
 
+// this function is used to get all the products from the database
 export const getProducts = async (req, res) => {
   try {
     const products = await Product.find({}); // fetching all products from the database
@@ -11,6 +12,7 @@ export const getProducts = async (req, res) => {
   }
 };
 
+// this function is used to create a new product in the database
 export const createProduct = async (req, res) => {
   const product = req.body; // getting the products from the request body
 
@@ -32,6 +34,7 @@ export const createProduct = async (req, res) => {
   }
 };
 
+// this function is used to update a product in the database
 export const updateProduct = async (req, res) => {
   const { id } = req.params; // getting the product ID from the request parameters
 
@@ -52,6 +55,7 @@ export const updateProduct = async (req, res) => {
   }
 };
 
+// this function is used to delete a product from the database
 export const deleteProduct = async (req, res) => {
   const { id } = req.params; // getting the product ID from the request parameters
   // console.log(id); // logging the product ID to the console
