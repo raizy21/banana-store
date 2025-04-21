@@ -68,6 +68,21 @@ npm run dev
 - 🏗️ Set up a Node.js server using the built-in `http` module in `package.json`.
   `"type": "module",`
 
+- 🛢️ The `mongoose` package connects your MngoDb database.
+- 🧬 Create a new instance of `MongoDB`.
+
+- 🔌 `connectDB` tests the database connection on startup:
+  - ✅ Logs `"MongoDB connected : ${connectDB.connection.host}"` if successful
+  - ❌ Logs `"MongoDB connection error:", error` if it fails
+
+---
+
+# 🗃️ Database
+
+I use [🍃 MongoDB](https://www.mongodb.com/) as database solution.
+
+🛠️ My data is stored in collections rather than tables, and I manage the schema and connection using [Mongoose](https://mongoosejs.com/).
+
 ---
 
 ## 📦 Dependencies

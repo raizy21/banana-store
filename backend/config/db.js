@@ -14,7 +14,7 @@ export const connectDB = async () => {
     // console.log("MONGO_URI from .env:", connect); // log the MongoDB URI for debugging/;
 
     const connectDB = await mongoose.connect(connect); // connect to MongoDB using the URI
-    console.log(`MongoDB connected : ${connectDB.connection.host}`); // Log the MongoDB connection host
+    console.log(`MongoDB connected : ${connectDB.connection.host}`); // log the MongoDB connection host
   } catch (error) {
     console.error("MongoDB connection error:", error);
     process.exit(1); // process code 1 code indicates an error occurred , 0 code indicates success
