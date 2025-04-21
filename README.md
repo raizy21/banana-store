@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="./logo.png" alt="Banana Store Logo" width="200"/>
+  <img src="./logo.png" alt="Banana Store Logo"  width="120" style="margin-bottom: -50px;"/>
 </p>
 
 <h1 align="center">🍌 Banana Store</h1>
@@ -274,9 +274,26 @@ I use [🍃 MongoDB](https://www.mongodb.com/) as database solution.
 
 # 📚 Project Resources
 
-### ⚙️ Node.js, Express, MongoDB
+### ⚙️ Core Technologies
 
-- 📘 [Node.js Official Docs](https://nodejs.org/en/docs)
-- 🚀 [Express.js Guide](https://expressjs.com/en/starter/guide.html)
-- 🍃 [MongoDB Documentation](https://www.mongodb.com/docs/)
-- 🔗 [Mongoose Docs](https://mongoosejs.com/docs/)
+- 📘 [Node.js Official Docs](https://nodejs.org/en/docs) – JavaScript runtime built on Chrome’s V8 engine
+- 🚀 [Express.js Guide](https://expressjs.com/en/starter/guide.html) – fast and minimalist web framework for Node.js
+- 🍃 [MongoDB Documentation](https://www.mongodb.com/docs/) – NoSQL database used to store products and more
+- 🔗 [Mongoose Docs](https://mongoosejs.com/docs/) – elegant MongoDB object modeling for Node.js
+
+---
+
+### 🛠️ Developer Tools
+
+- 🔁 [Nodemon](https://www.npmjs.com/package/nodemon) – auto-restarts the server on code changes during development
+- 🔐 [dotenv](https://www.npmjs.com/package/dotenv) – loads environment variables from a `.env` file into `process.env`
+- 📦 [npm (Node Package Manager)](https://docs.npmjs.com/) – dependency management tool for Node.js
+
+---
+
+### 🧪 Testing & Debugging
+
+- 🧪 [Postman](https://www.postman.com/) – powerful tool for testing your API endpoints
+- 🐞 [MongoDB Compass](https://www.mongodb.com/products/compass) – GUI for interacting with your MongoDB database
+
+---
