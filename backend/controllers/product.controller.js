@@ -60,12 +60,16 @@ export const deleteProduct = async (req, res) => {
   const { id } = req.params; // getting the product ID from the request parameters
   // console.log(id); // logging the product ID to the console
 
+  if (!mongoose.Types.ObjectId.isValid(id)) {
+    res.status(404).json({ success: false, message: "invalid product id" }); // sending a response with status 404 (not found)
+  }
+
   try {
     await Product.findByIdAndDelete(id); // deleting the product from the database using the ID
     res.status(200).json({ success: true, message: "product deleted" }); // sending a response with status 200 (OK)
   } catch (error) {
     console.error("error in deleting product", error.message); // logging the error to the console
-    res.status(404).json({ success: false, message: "product not found" }); // sending a response with status 404 (not found)
-    // res.status(500).json({ success: false, message: error.message }); // sending a response with status 500 (internal server error)
+    // res.status(404).json({ success: false, message: "product not found" }); // sending a response with status 404 (not found)
+    res.status(500).json({ success: false, message: error.message }); // sending a response with status 500 (internal server error)
   }
 };
