@@ -26,8 +26,13 @@ _Is maintainers for this repository._
 
 # 🧰 Key Technologies
 
-- ⚙️ **Backend**: Node.js + Express.js
-- 🗃️ **Database**: MongoDB
+- ⚙️ **Backend**: [Node.js](https://nodejs.org/en/) + [Express.js](https://expressjs.com/) – RESTful API server for managing store data
+- 🗃️ **Database**: [MongoDB](https://www.mongodb.com/) – NoSQL database for storing product information
+- 🍃 **ODM**: [Mongoose](https://mongoosejs.com/) – MongoDB object modeling tool for schema and queries
+
+- ⚛️ **Frontend**: [React](https://react.dev/) + [Vite](https://vitejs.dev/) – Fast SPA setup with modern React (v19)
+- 🎨 **UI Library**: [Chakra UI](https://chakra-ui.com/) – Accessible and flexible component-based design system
+- 🎞️ **Animation**: [Framer Motion](https://www.framer.com/motion/) – Declarative animations for React components
 
 ---
 
@@ -292,10 +297,43 @@ I use [🍃 MongoDB](https://www.mongodb.com/) as database solution.
 
 ## 📦 Dependencies
 
+---
+
+### frontend
+
+- [**React**](https://react.dev/) – ⚛️ A modern library for building interactive UIs using components.
+- [**React DOM**](https://react.dev/reference/react-dom) – 🌍 Provides DOM-specific methods to render React components.
+- [**@chakra-ui/react**](https://chakra-ui.com/docs) – 🎨 A modern React component library for building accessible and themeable UIs.
+- [**@emotion/react**](https://emotion.sh/docs/introduction) – 💅 A powerful library for writing CSS styles with JavaScript.
+- [**@emotion/styled**](https://emotion.sh/docs/styled) – 🎯 Styled component API built on Emotion.
+- [**Framer Motion**](https://www.framer.com/motion/) – 🎞️ Production-ready animations and gestures for React.
+
+---
+
+### backend
+
 - [**Express.js**](https://expressjs.com/) – ⚙️ A fast and minimalist Node.js web framework used to build robust RESTful APIs.
 - [**Mongoose**](https://mongoosejs.com/) – 🧩 An elegant MongoDB object modeling tool for Node.js, providing schema-based solutions to model your application data and streamline database interactions.
 
 ## 🧪 Dev Dependencies
+
+---
+
+### frontend
+
+- [**Vite**](https://vitejs.dev/) – ⚡ A fast build tool and dev server optimized for modern frontend frameworks like React.
+- [**@vitejs/plugin-react**](https://vitejs.dev/guide/#react) – 🔄 Adds React Fast Refresh and JSX support to Vite.
+- [**ESLint**](https://eslint.org/) – 🧼 A pluggable linter tool for identifying and fixing problems in your JavaScript code.
+- [**@eslint/js**](https://www.npmjs.com/package/@eslint/js) – 🧠 Base configuration for ESLint’s core rules.
+- [**eslint-plugin-react-hooks**](https://www.npmjs.com/package/eslint-plugin-react-hooks) – 🔍 Linting rules for React hooks.
+- [**eslint-plugin-react-refresh**](https://www.npmjs.com/package/eslint-plugin-react-refresh) – 🔄 ESLint plugin for React Fast Refresh development.
+- [**@types/react**](https://www.npmjs.com/package/@types/react) – 📘 TypeScript types for React.
+- [**@types/react-dom**](https://www.npmjs.com/package/@types/react-dom) – 📘 TypeScript types for ReactDOM.
+- [**globals**](https://www.npmjs.com/package/globals) – 🌐 A set of global variable definitions for ESLint environments.
+
+---
+
+### backend
 
 - [**dotenv**](https://www.npmjs.com/package/dotenv) – 🌱 Loads environment variables from a `.env` file into `process.env`, keeping sensitive config out of your code.
 - [**nodemon**](https://nodemon.io/) – 🔁 Monitors your source files and restarts the server automatically on changes, speeding up development.
@@ -303,6 +341,25 @@ I use [🍃 MongoDB](https://www.mongodb.com/) as database solution.
 ---
 
 # 📚 Project Resources
+
+---
+
+### ⚛️ Frontend Technologies
+
+- 🌀 [Vite Documentation](https://vitejs.dev/guide/) – Modern build tool that delivers fast development and optimized builds.
+- ⚛️ [React Docs (v19)](https://react.dev/) – Official documentation for building UIs with React.
+- 🎨 [Chakra UI Docs](https://chakra-ui.com/docs) – Documentation for building accessible component-based UIs.
+- 💥 [Framer Motion Docs](https://www.framer.com/motion/) – Declarative animations and motion in React.
+
+---
+
+### 🛠️ Frontend Dev Tools
+
+- 🧪 [ESLint](https://eslint.org/) – Static code analysis tool to catch errors early and enforce best practices.
+- 🚦 [TypeScript Types (React)](https://www.npmjs.com/package/@types/react) – Type safety for React development.
+- ⚙️ [Vite Config Guide](https://vitejs.dev/config/) – Configuration guide for customizing your Vite setup.
+
+---
 
 ### ⚙️ Core Technologies
 
@@ -325,5 +382,3 @@ I use [🍃 MongoDB](https://www.mongodb.com/) as database solution.
 
 - 🧪 [Postman](https://www.postman.com/) – powerful tool for testing your API endpoints
 - 🐞 [MongoDB Compass](https://www.mongodb.com/products/compass) – GUI for interacting with your MongoDB database
-
----
