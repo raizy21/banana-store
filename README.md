@@ -80,6 +80,15 @@ npm run dev
 
 ---
 
+### 🎨 Frontend Setup (Vite + React)
+
+The frontend is initialized using **[Vite](https://vitejs.dev/)** with **React** for a fast and modern development experience.
+
+The frontend development server runs on:  
+**`http://localhost:3000`**
+
+---
+
 ### 🗂️ Project Structure
 
 The Banana Store is a full-stack application structured into two main parts: a **backend** powered by Node.js, Express, and MongoDB, and a **frontend** built with React.
@@ -88,6 +97,16 @@ The Banana Store is a full-stack application structured into two main parts: a *
 banana-store/
 
 ├── frontend/ # frontend (React)
+│ ├── node_modules/ # frontend dependencies (auto-generated)
+│ ├── public/ # static public assets
+│ ├── src/ # react source code (components, pages, etc.)
+│ │  └── main.jsx # react app entry point
+│ ├── .gitignore # files/folders to ignore in Git
+│ ├── eslint.config.js # eslint configuration
+│ ├── index.html # html template used by Vite
+│ ├── package.json # frontend dependencies and scripts
+│ ├── package-lock.json # exact dependency versions
+│ ├── vite.config.js # Vite configuration file
 ├── backend/ # backend source code (Node.js + Express)
 │ ├── config/ # MongoDB connection setup (e.g., db.js)
 │ ├── controllers/ # route logic and request handling (e.g., product.controller.js)
