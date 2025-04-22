@@ -57,6 +57,17 @@ Before running this server, ensure you have the following installed:
 
 ---
 
+### 🔐 Environment Variables
+
+The backend uses environment variables stored in a `.env` file located in the `backend/` directory. Make sure to create this file before running the project.
+
+#### Example `.env` file:
+
+```env
+MONGO_URI=mongodb+srv://<username>:<password>@cluster.mongodb.net/banana-store
+PORT=5000
+```
+
 ## 🚀 Running the Server
 
 To start the server, run the following command:
