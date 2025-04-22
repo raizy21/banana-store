@@ -7,7 +7,7 @@ import dotenv from "dotenv"; // importing dotenv to load environment variables
 const __filename = fileURLToPath(import.meta.url); // get the current file name
 const __dirname = path.dirname(__filename); // get the directory name of the current file
 
-dotenv.config({ path: path.resolve(__dirname, "../../.env") }); // Load environment variables from .env file
+dotenv.config({ path: path.resolve(__dirname, "../../.env") }); // load environment variables from .env file
 export const connectDB = async () => {
   try {
     const connect = process.env.MONGO_URI; // get the MongoDB URI from environment variables
