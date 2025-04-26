@@ -307,6 +307,10 @@ I use [🍃 MongoDB](https://www.mongodb.com/) as database solution.
 - [**@emotion/react**](https://emotion.sh/docs/introduction) – 💅 A powerful library for writing CSS styles with JavaScript.
 - [**@emotion/styled**](https://emotion.sh/docs/styled) – 🎯 Styled component API built on Emotion.
 - [**Framer Motion**](https://www.framer.com/motion/) – 🎞️ Production-ready animations and gestures for React.
+- [**React Router DOM**](https://reactrouter.com/en/main) – 🧭 Declarative routing for React web apps with support for nested routes and dynamic segments.
+- [**React Icons**](https://react-icons.github.io/react-icons/) – 💠 A comprehensive icon library wrapper that includes Font Awesome, Material Design, Feather, and many others, easily used in React apps.
+- [**@chakra-ui/icons**](https://chakra-ui.com/docs/components/icon/usage#chakra-uiicons) – 🔆 A set of Chakra UI-compatible SVG icon components for consistent iconography.
+- [**Zustand**](https://zustand-demo.pmnd.rs/) – 🐻 A small, fast, and scalable state-management library for React applications with a minimalistic API.
 
 ---
 
@@ -330,6 +334,7 @@ I use [🍃 MongoDB](https://www.mongodb.com/) as database solution.
 - [**@types/react**](https://www.npmjs.com/package/@types/react) – 📘 TypeScript types for React.
 - [**@types/react-dom**](https://www.npmjs.com/package/@types/react-dom) – 📘 TypeScript types for ReactDOM.
 - [**globals**](https://www.npmjs.com/package/globals) – 🌐 A set of global variable definitions for ESLint environments.
+- [**Chakra UI Toast**](https://chakra-ui.com/docs/components/toast) – 🔔 A simple, customizable notification system for showing feedback messages in your app using Chakra UI’s `useToast` hook.
 
 ---
 
