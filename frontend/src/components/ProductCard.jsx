@@ -1,4 +1,12 @@
-import { Box, Heading, Image, Text, HStack } from "@chakra-ui/react";
+import {
+  Box,
+  Heading,
+  Image,
+  Text,
+  HStack,
+  IconButton,
+} from "@chakra-ui/react";
+import { EditIcon, DeleteIcon } from "@chakra-ui/icons";
 
 const ProductCard = ({ product }) => {
   return (
@@ -22,9 +30,13 @@ const ProductCard = ({ product }) => {
           {product.name}
         </Heading>
 
-        <Text fontWeight="bold" fontSize="xl" color="yellow.400">
+        <Text fontWeight="bold" fontSize="xl" mb={4}>
           ${product.price}
         </Text>
+        <HStack spacing={2}>
+          <IconButton icon={<EditIcon />} />
+          <IconButton icon={<DeleteIcon />} />
+        </HStack>
       </Box>
     </Box>
   );
