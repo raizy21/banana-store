@@ -14,6 +14,7 @@ import {
   ModalFooter,
   ModalBody,
   ModalCloseButton,
+  Button,
   VStack,
   Input,
   useDisclosure,
@@ -103,6 +104,15 @@ const ProductCard = ({ product }) => {
               <Input placeholder="product image" name="image" />
             </VStack>
           </ModalBody>
+
+          <ModalFooter>
+            <Button colorSchema="yellow" mr={3}>
+              update
+            </Button>
+            <Button variant="ghost" onClick={onClose}>
+              cancel
+            </Button>
+          </ModalFooter>
         </ModalContent>
       </Modal>
     </Box>
