@@ -9,7 +9,11 @@ import {
   useToast,
   Modal,
   ModalOverlay,
+  ModalContent,
+  ModalHeader,
+  ModalFooter,
   ModalBody,
+  ModalCloseButton,
   VStack,
   Input,
   useDisclosure,
@@ -73,8 +77,9 @@ const ProductCard = ({ product }) => {
         </Text>
         <HStack spacing={2}>
           <IconButton
-            icon={<EditIcon onClick={isOpen} />}
+            icon={<EditIcon />}
             colorScheme="yellow"
+            onClick={onOpen}
           />
           <IconButton
             icon={<DeleteIcon />}
@@ -84,22 +89,22 @@ const ProductCard = ({ product }) => {
         </HStack>
       </Box>
 
-      {/* <Modal isOpen={isOpen} onClose={onClose}> */}
-      {/* <ModalOverlay /> */}
-      {/* <ModelContent> */}
-      {/* <ModalHeader>update product</ModalHeader> */}
+      <Modal isOpen={isOpen} onClose={onClose}>
+        <ModalOverlay />
+        <ModalContent>
+          <ModalHeader>update product</ModalHeader>
 
-      {/* <ModalCloseButton /> */}
+          <ModalCloseButton />
 
-      {/* <ModalBody> */}
-      {/* <VStack spacing={4}> */}
-      {/* <Input pllaceholder="product name" name="name" /> */}
-      {/* <Input placeholder="product price" name="price" type="number" /> */}
-      {/* <Input placeholder="product image" name="image" /> */}
-      {/* </VStack> */}
-      {/* </ModalBody> */}
-      {/* </ModelContent> */}
-      {/* </Modal> */}
+          <ModalBody>
+            <VStack spacing={4}>
+              <Input placeholder="product name" name="name" />
+              <Input placeholder="product price" name="price" type="number" />
+              <Input placeholder="product image" name="image" />
+            </VStack>
+          </ModalBody>
+        </ModalContent>
+      </Modal>
     </Box>
   );
 };
