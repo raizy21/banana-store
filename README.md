@@ -342,6 +342,7 @@ I use [🍃 MongoDB](https://www.mongodb.com/) as database solution.
 
 - [**dotenv**](https://www.npmjs.com/package/dotenv) – 🌱 Loads environment variables from a `.env` file into `process.env`, keeping sensitive config out of your code.
 - [**nodemon**](https://nodemon.io/) – 🔁 Monitors your source files and restarts the server automatically on changes, speeding up development.
+- [**cross-env**](https://www.npmjs.com/package/cross-env) – 🌎 Allows you to set environment variables across different platforms (Windows, macOS, Linux) in a consistent way.
 
 ---
 

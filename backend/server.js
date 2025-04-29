@@ -8,16 +8,15 @@ import { fileURLToPath } from "url"; // importing fileURLToPath to convert __fil
 dotenv.config(); // loading environment variables from the .env file
 // recreate __dirname in ESM
 const __filename = fileURLToPath(import.meta.url); // get the current file name
-const __dirnamePath = path.dirname(__filename); // get the directory name of the current file
+const __dirname = path.dirname(__filename); // get the directory name of the current file
 
-dotenv.config({ path: path.resolve(__dirnamePath, "../../.env") }); // load environment variables from .env file
+dotenv.config({ path: path.resolve(__dirname, "../../.env") }); // load environment variables from .env file
 
 const app = express(); // creating an instance of express
 
 const PORT = process.env.PORT || 5000; // setting the port to the value from the environment variable or defaulting to 5000
 
-const __dirname = path.resolve(); // get the directory name of the current file
-
+// __dirname = path.resolve(); // resolve the directory name to an absolute path
 app.use(express.json()); // middleware to parse JSON request bodies allows us to parse JSON request bodies
 
 // root URL
@@ -26,14 +25,16 @@ app.get("/", (req, res) => {
   res.send("hello from node js!"); // sending a response to the client
 }); // end of the route
 
+app.use("/api/products", productRoutes); // using the product routes for the /api/products URL
 if (process.env.NODE_ENV === "production") {
-  app.use(express.static(path.join(__dirname, "/frontend/dist"))); // serving static files from the frontend build directory
+  // serve static files
+  app.use(express.static(path.join(__dirname, "../frontend/dist")));
 
-  app.get("*", (req, res) => {
-    res.sendFile(path.resolve(__dirname, "frontend", "dist", "index.html")); // sending the index.html file for all other routes
+  // serve index.html for all unknown routes
+  app.get("/*", (req, res) => {
+    res.sendFile(path.join(__dirname, "../frontend/dist", "index.html"));
   });
 }
-app.use("/api/products", productRoutes); // using the product routes for the /api/products URL
 
 app.listen(PORT, () => {
   connectDB(); // calling the connectDB function to connect to the database
