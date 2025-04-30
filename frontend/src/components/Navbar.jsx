@@ -3,16 +3,17 @@ import {
   Container,
   Flex,
   HStack,
-  Text,
+  Box,
+  Image,
   useColorMode,
 } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
+import bananaStore from "../../public/banana-store.png";
 
 // import { PlusSquareIcon } from "@chakra-ui/icons";
 import { CiSquarePlus } from "react-icons/ci";
 import { FaMoon } from "react-icons/fa";
-import { CiSun } from "react-icons/ci";
-
+import { IoSunnyOutline } from "react-icons/io5";
 const Navbar = () => {
   const { colorMode, toggleColorMode } = useColorMode();
 
@@ -24,15 +25,10 @@ const Navbar = () => {
         justifyContent={"space-between"}
         flexDir={{ base: "column", sm: "row" }}
       >
-        <Text
-          fontSize={{ base: "22", sm: "28" }}
-          fontWeight={"bold"}
-          textAlign={"center"}
-          bgGradient={"linear(to-r, orange.900, orange.100)"}
-          bgClip={"text"}
-        >
-          <Link to={"/"}>banana store</Link>
-        </Text>
+        <Box boxSize="sm">
+          <Image src={bananaStore} alt="banana store" mt={40} h={28} w={28} />
+          <Link to={"/"}></Link>
+        </Box>
 
         <HStack spacing={2} alignItems={"center"}>
           <Link to={"/create"}>
@@ -42,7 +38,11 @@ const Navbar = () => {
           </Link>
 
           <Button onClick={toggleColorMode}>
-            {colorMode === "light" ? <FaMoon size={40} /> : <CiSun size={40} />}
+            {colorMode === "light" ? (
+              <FaMoon size={40} />
+            ) : (
+              <IoSunnyOutline size={40} />
+            )}
           </Button>
         </HStack>
       </Flex>
