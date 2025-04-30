@@ -7,7 +7,10 @@ import CreatePage from "./pages/CreatePage.jsx";
 import Navbar from "./components/Navbar.jsx";
 function App() {
   return (
-    <Box minH={"100vh"} bg={useColorModeValue("gray.100", "gray.900")}>
+    <Box
+      minH={"100vh"}
+      bg={useColorModeValue("rgb(121, 111, 16)", "rgb(241, 233, 138)")}
+    >
       <Navbar />
       <Routes>
         <Route path="/" element={<HomePage />} />

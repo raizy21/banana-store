@@ -19,7 +19,7 @@ const HomePage = () => {
         <Text
           fontSize={"30"}
           fontWeight={"bold"}
-          bgGradient={"linear(to-r, black,yellow.400)"}
+          bgGradient={"linear(to-r, rgb(71, 28, 180),rgb(57, 7, 107))"}
           bgClip={"text"}
           textAlign={"center"}
         >
@@ -37,13 +37,14 @@ const HomePage = () => {
             fontSize="xl"
             textAlign={"center"}
             fontWeight={"bold"}
-            color={"yellow.400"}
+            color={"rgb(71, 28, 180)"}
           >
             no products found
             <Link to={"/create"}>
+              <br />
               <Text
                 as="span"
-                color="black"
+                color="rgb(57, 7, 107)"
                 fontSize="xl"
                 _hover={{ textDecoration: "underline" }}
               >
