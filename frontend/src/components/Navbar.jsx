@@ -26,18 +26,23 @@ const Navbar = () => {
         flexDir={{ base: "column", sm: "row" }}
       >
         <Box boxSize="sm">
-          <Image src={bananaStore} alt="banana store" mt={40} h={28} w={28} />
-          <Link to={"/"}></Link>
+          <Link to={"/"}>
+            <Image src={bananaStore} alt="banana store" mt={40} h={28} w={28} />
+          </Link>
         </Box>
 
         <HStack spacing={2} alignItems={"center"}>
           <Link to={"/create"}>
-            <Button>
+            <Button bg={"#471cb4"} _hover={{ bg: "#39076b" }}>
               <CiSquarePlus size={40} />
             </Button>
           </Link>
 
-          <Button onClick={toggleColorMode}>
+          <Button
+            onClick={toggleColorMode}
+            bg={"#471cb4"}
+            _hover={{ bg: "#39076b" }}
+          >
             {colorMode === "light" ? (
               <FaMoon size={40} />
             ) : (

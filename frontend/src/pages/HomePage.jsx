@@ -1,4 +1,4 @@
-import { Container, VStack, Text, SimpleGrid } from "@chakra-ui/react";
+import { Container, VStack, Text, SimpleGrid, Divider } from "@chakra-ui/react";
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useProductStore } from "../store/product.js";
@@ -19,9 +19,10 @@ const HomePage = () => {
         <Text
           fontSize={"30"}
           fontWeight={"bold"}
-          bgGradient={"linear(to-r, rgb(71, 28, 180),rgb(57, 7, 107))"}
+          bgGradient={"linear(to-r, #471cb4,#39076b)"}
           bgClip={"text"}
           textAlign={"center"}
+          mt={10}
         >
           current products
         </Text>
@@ -37,14 +38,14 @@ const HomePage = () => {
             fontSize="xl"
             textAlign={"center"}
             fontWeight={"bold"}
-            color={"rgb(71, 28, 180)"}
+            color={"#471cb4"}
           >
             no products found
+            <Divider my={4} bg={"#471cb4"} />
             <Link to={"/create"}>
-              <br />
               <Text
                 as="span"
-                color="rgb(57, 7, 107)"
+                color={"#39076b"}
                 fontSize="xl"
                 _hover={{ textDecoration: "underline" }}
               >
