@@ -32,15 +32,21 @@ export const useProductStore = create((set) => ({
   },
 
   deleteProduct: async (pid) => {
+    if (!pid || pid === ":" || typeof pid !== "string") {
+      console.error("invalid product ID passed to deleteProduct:", pid);
+      return { success: false, message: "Invalid product ID" };
+    }
+
     const res = await fetch(`/api/products/${pid}`, {
       method: "DELETE",
     });
+
     const data = await res.json();
+
     if (!data.success) {
       return { success: false, message: data.message };
     }
 
-    // update the ui immediately, without needing to refetch the data
     set((state) => ({
       products: state.products.filter((product) => product._id !== pid),
     }));
