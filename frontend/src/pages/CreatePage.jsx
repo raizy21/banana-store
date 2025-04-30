@@ -7,7 +7,6 @@ import {
   Input,
   VStack,
   useToast,
-  useColorModeValue,
 } from "@chakra-ui/react";
 import { useProductStore } from "../store/product.js";
 
@@ -50,43 +49,62 @@ const CreatePage = () => {
   return (
     <Container maxW="container.sm">
       <VStack spacing={8}>
-        <Heading as={"h1"} size={"2xl"} textAlign={"center"} mb={8}>
+        <Heading
+          as={"h1"}
+          size={"2xl"}
+          mt={10}
+          textAlign={"center"}
+          mb={8}
+          color={"#471cb4"}
+        >
           create new product
         </Heading>
 
-        <Box
-          w={"full"}
-          bg={useColorModeValue("white", "gray.800")}
-          p={6}
-          rounded={"lg"}
-          shadow={"md"}
-        >
+        <Box w={"full"} bg={"#471cb4"} p={6} rounded={"lg"} shadow={"md"}>
           <VStack spacing={4}>
             <Input
               placeholder="product name"
               name="name"
               value={newProduct.name}
+              color={"#f2e122"}
+              bg={"#39076b"}
               onChange={(e) =>
                 setNewProduct({ ...newProduct, name: e.target.value })
               }
+              _placeholder={{
+                color: "#f1e98a",
+                fontWeight: "bold",
+              }}
             />
 
             <Input
               placeholder="product price"
               name="price"
+              color={"#f2e122"}
+              bg={"#39076b"}
               value={newProduct.price}
               onChange={(e) =>
                 setNewProduct({ ...newProduct, price: e.target.value })
               }
+              _placeholder={{
+                color: "#f1e98a",
+                fontWeight: "bold",
+              }}
             />
 
             <Input
               placeholder="product image URL"
               name="image"
+              color={"#f2e122"}
+              bg={"#39076b"}
               value={newProduct.image}
               onChange={(e) =>
                 setNewProduct({ ...newProduct, image: e.target.value })
               }
+              _placeholder={{
+                color: "#f1e98a",
+                fontWeight: "bold",
+              }}
             />
 
             <Button colorScheme="yellow" onClick={handleAddProduct} w="full">
