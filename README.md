@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="/assets/logo.png" alt="Banana Store Logo"  width="120" style="margin-bottom: -50px;"/>
+  <img src="/frontend/src/assets/logo.png" alt="Banana Store Logo"  width="120" style="margin-bottom: -50px;"/>
 </p>
 
 <h1 align="center">🍌 Banana Store</h1>
