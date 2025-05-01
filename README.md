@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="./logo.png" alt="Banana Store Logo"  width="120" style="margin-bottom: -50px;"/>
+  <img src="/assets/logo.png" alt="Banana Store Logo"  width="120" style="margin-bottom: -50px;"/>
 </p>
 
 <h1 align="center">🍌 Banana Store</h1>
@@ -21,6 +21,23 @@ This backend provides a clean and structured API for handling and storing store-
 - 👨‍💻 [Andrei](https://github.com/raizy21)
 
 _Is maintainers for this repository._
+
+---
+
+## 🚀 Deployment
+
+### 🧠 Backend & 🖥️ Frontend (Combined)
+
+Both the backend and frontend are deployed on the same Render domain.
+
+🌍 **Live App (Render)**:  
+🔗 [https://banana-store.onrender.com](https://banana-store.onrender.com)
+
+🧪 **Backend API Route (served from port `5000`)**:  
+`/api/product`
+
+📦 **GitHub Repository**:  
+🔗 [https://github.com/raizy21/banana-store](https://github.com/raizy21/banana-store)
 
 ---
 
