@@ -328,6 +328,7 @@ I use [🍃 MongoDB](https://www.mongodb.com/) as database solution.
 - [**React Icons**](https://react-icons.github.io/react-icons/) – 💠 A comprehensive icon library wrapper that includes Font Awesome, Material Design, Feather, and many others, easily used in React apps.
 - [**@chakra-ui/icons**](https://chakra-ui.com/docs/components/icon/usage#chakra-uiicons) – 🔆 A set of Chakra UI-compatible SVG icon components for consistent iconography.
 - [**Zustand**](https://zustand-demo.pmnd.rs/) – 🐻 A small, fast, and scalable state-management library for React applications with a minimalistic API.
+- [**@chakra-ui/icons**](https://chakra-ui.com/docs/components/icon/usage#chakra-uiicons) – 🔆 A set of Chakra UI-compatible SVG icon components for consistent iconography.
 
 ---
 
