@@ -12,10 +12,14 @@ import {
   VStack,
   Input,
   useToast,
+  useColorModeValue,
 } from "@chakra-ui/react";
 import { useProductStore } from "../store/product";
 
 const ModalProducts = ({ isOpen, onClose, product }) => {
+  const textColor = useColorModeValue("yellow.200", "yellow.500");
+  const bgColor = useColorModeValue("#471cb4", "#39076b");
+
   const [updatedProduct, setUpdatedProduct] = useState(product);
   const { updateProduct } = useProductStore();
   const toast = useToast();
@@ -50,7 +54,7 @@ const ModalProducts = ({ isOpen, onClose, product }) => {
   return (
     <Modal isOpen={isOpen} onClose={onClose}>
       <ModalOverlay />
-      <ModalContent>
+      <ModalContent bg={bgColor} color={textColor}>
         <ModalHeader>update product</ModalHeader>
 
         <ModalCloseButton />
