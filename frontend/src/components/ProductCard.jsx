@@ -26,8 +26,8 @@ import { useState } from "react";
 const ProductCard = ({ product }) => {
   const [updatedProduct, setUpdatedProduct] = useState(product);
 
-  const textColor = useColorModeValue("black", "yellow.400");
-  const bgColor = useColorModeValue("white", "gray.800");
+  const textColor = useColorModeValue("yellow.200", "yellow.500");
+  const bgColor = useColorModeValue("#471cb4", "#39076b");
 
   const { deleteProduct, updateProduct } = useProductStore();
   const toast = useToast();
@@ -98,7 +98,7 @@ const ProductCard = ({ product }) => {
       />
 
       <Box p={4} key={product._id}>
-        <Heading as="h3" size="md" mb={2}>
+        <Heading as="h3" size="md" mb={2} color={textColor}>
           {product.name}
         </Heading>
 
@@ -108,13 +108,13 @@ const ProductCard = ({ product }) => {
         <HStack spacing={2}>
           <IconButton
             icon={<EditIcon />}
-            colorScheme="yellow"
+            colorScheme={"yellow"}
             onClick={onOpen}
           />
           <IconButton
             icon={<DeleteIcon />}
             onClick={() => handleDeleteProduct(product._id)}
-            colorScheme="red"
+            colorScheme={"red"}
           />
         </HStack>
       </Box>

@@ -27,7 +27,7 @@ const Navbar = () => {
       >
         <Box boxSize="sm">
           <Link to={"/"}>
-            <Image src={bananaStore} alt="banana store" mt={40} h={28} w={28} />
+            <Image src={bananaStore} alt="banana store" mt={40} h={20} w={36} />
           </Link>
         </Box>
 
