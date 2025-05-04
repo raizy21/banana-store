@@ -18,7 +18,7 @@ const Navbar = () => {
   const { colorMode, toggleColorMode } = useColorMode();
 
   return (
-    <Container maxW={"1140px"} px={4}>
+    <Box as="header" bg="yellow.400" width="100%" p={4} maxWidth="100%">
       <Flex
         h={16}
         alignItems={"center"}
@@ -27,7 +27,14 @@ const Navbar = () => {
       >
         <Box boxSize="sm">
           <Link to={"/"}>
-            <Image src={bananaStore} alt="banana store" mt={40} h={20} w={36} />
+            <Image
+              src={bananaStore}
+              alt="banana store"
+              mt={40}
+              h={20}
+              w={36}
+              ml={20}
+            />
           </Link>
         </Box>
 
@@ -42,6 +49,7 @@ const Navbar = () => {
             onClick={toggleColorMode}
             bg={"#471cb4"}
             _hover={{ bg: "#39076b" }}
+            mr={20}
           >
             {colorMode === "light" ? (
               <FaMoon size={40} />
@@ -51,7 +59,7 @@ const Navbar = () => {
           </Button>
         </HStack>
       </Flex>
-    </Container>
+    </Box>
   );
 };
 

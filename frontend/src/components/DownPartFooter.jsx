@@ -11,7 +11,7 @@ const DownPartFooter = () => {
           flexDir={{ base: "column", sm: "row" }}
         >
           <Box p={4} color="#471cb4" w={"100%"} mt={10}>
-            &copy; {new Date().getFullYear()} Banana Store. All rights reserved.
+            &copy; {new Date().getFullYear()} banana store. all rights reserved.
           </Box>
 
           {/* linkedin */}

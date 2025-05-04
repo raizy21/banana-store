@@ -1,15 +1,16 @@
 import UpperPartFooter from "./UpperPartFooter";
 import DownPartFooter from "./DownPartFooter";
+import { Box } from "@chakra-ui/react";
 
 const Footer = () => {
   return (
-    <footer>
+    <Box as="footer" bg="yellow.400" width="100%" py={4}>
       {/* the upper part */}
       <UpperPartFooter />
 
       {/* the down part */}
       <DownPartFooter />
-    </footer>
+    </Box>
   );
 };
 
