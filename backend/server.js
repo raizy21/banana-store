@@ -1,10 +1,13 @@
 import express from "express"; // importing express
 import dotenv from "dotenv"; // importing dotenv
 import { connectDB } from "./config/db.js"; // importing the connectDB function from the db.js file
+
 import productRoutes from "./routes/product.route.js"; // importing the product routes
 import emailRoutes from "./routes/emailRoutes.js"; // importing the email routes
+
 import path from "path"; // importing path to resolve file paths
 import { fileURLToPath } from "url"; // importing fileURLToPath to convert __filename to a path
+
 import cors from "cors"; // importing cors to enable CORS
 
 // recreate __dirname in ESM
