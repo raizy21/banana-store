@@ -44,6 +44,7 @@ Both the backend and frontend are deployed on the same Render domain.
 # 🧰 Key Technologies
 
 - ⚙️ **Backend**: [Node.js](https://nodejs.org/en/) + [Express.js](https://expressjs.com/) – RESTful API server for managing store data
+- 📬 **Email Service**: [Nodemailer](https://nodemailer.com/about/) – Used to send user-submitted form data (e.g., product inquiries) to your Gmail inbox securely via SMTP
 - 🗃️ **Database**: [MongoDB](https://www.mongodb.com/) – NoSQL database for storing product information
 - 🍃 **ODM**: [Mongoose](https://mongoosejs.com/) – MongoDB object modeling tool for schema and queries
 
@@ -88,6 +89,8 @@ The backend uses environment variables stored in a `.env` file located in the `b
 ```env
 MONGO_URI=mongodb+srv://<username>:<password>@cluster.mongodb.net/banana-store
 PORT=5000
+GMAIL_USER=andrei.dev.freelancer@gmail.com
+GMAIL_PASS=key generated for nodemailer from gmail
 ```
 
 ## 🚀 Running the Server
@@ -134,6 +137,7 @@ banana-store/
 │ ├── controllers/ # route logic and request handling (e.g., product.controller.js)
 │ ├── models/ # Mongoose models for MongoDB (e.g., product.model.js)
 │ ├── routes/ # Express route definitions (e.g., product.route.js)
+│ ├── utils/  # Utility modules (e.g., sendEmail.js for mailing logic, envLoader.js for dotenv config)
 │ └── server.js # Main entry point for the backend server
 ├── node_modules/ # node.js dependencies (auto-generated)
 ├── .env # environment variables (e.g., MONGO_URI)
@@ -304,11 +308,83 @@ DELETE /api/products/605c5ef2e3a14f0015c9e9f4
 
 ---
 
+### 📬 Send an Email Inquiry
+
+> **[POST]** `/api/email/send` – _Send a contact form inquiry via Nodemailer to a Gmail inbox_
+
+This endpoint sends a structured email containing user-submitted form data using `nodemailer`. It uses Gmail's SMTP service and requires a valid App Password to authenticate the request.
+
+---
+
+#### 🧾 Request Body
+
+```json
+{
+  "firstName": "andrei",
+  "secondName": "razvan",
+  "email": "abc@email.com",
+  "phone": "0123456789",
+  "message": "i am a banana",
+  "plan": "premium"
+}
+```
+
+#### ✅ Success Response
+
+- **Status Code:** `200 OK`
+- **Content-Type:** `application/json`
+
+```json
+{
+  "message": "email sent successfully",
+  "result": {
+    "accepted": ["andrei.dev.freelancer@gmail.com"],
+    "rejected": [],
+    "envelope": {
+      "from": "abc@email.com",
+      "to": ["andrei.dev.freelancer@gmail.com"]
+    },
+    "response": "250 2.0.0 OK ... - gsmtp",
+    "messageId": "<...@email.com>"
+  }
+}
+```
+
+#### 🔧 Under the Hood
+
+- This endpoint uses [**Nodemailer**](https://nodemailer.com/about/) with Gmail's SMTP.
+- Email credentials are securely loaded using `dotenv` (`GMAIL_USER`, `GMAIL_PASS`).
+- Logic is handled in `utils/sendEmail.js` and routed through `controllers/emailController.js`.
+
+---
+
 # 🗃️ Database
 
 I use [🍃 MongoDB](https://www.mongodb.com/) as database solution.
 
 🛠️ My data is stored in collections rather than tables, and I manage the schema and connection using [Mongoose](https://mongoosejs.com/).
+
+### 🍃 Database: MongoDB
+
+This project uses **MongoDB** to store product information in a `products` collection. Each document represents a product available in the Banana Store, including fields for name, price, image, and timestamps.
+
+---
+
+#### 🗂️ Example Collection: `products`
+
+Each document follows this structure:
+
+```json
+{
+  "_id": "68146319d0ae30a640bc739d",
+  "name": "banana cut",
+  "price": 21.21,
+  "image": "https://plus.unsplash.com/premium_photo-1664304188646-47b168d698aa?w=600",
+  "createdAt": "2025-05-02T06:15:53.419Z",
+  "updatedAt": "2025-05-02T06:15:53.419Z",
+  "__v": 0
+}
+```
 
 ---
 
@@ -362,6 +438,7 @@ I use [🍃 MongoDB](https://www.mongodb.com/) as database solution.
 - [**nodemon**](https://nodemon.io/) – 🔁 Monitors your source files and restarts the server automatically on changes, speeding up development.
 - [**cross-env**](https://www.npmjs.com/package/cross-env) – 🌎 Allows you to set environment variables across different platforms (Windows, macOS, Linux) in a consistent way.
 - [**cors**](https://www.npmjs.com/package/cors) – 🛡️ Enables [CORS (Cross-Origin Resource Sharing)](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS), allowing your frontend (e.g., running on `localhost:3000`) to communicate securely with your backend (e.g., Express server on `localhost:5000`). This is essential for handling API requests across different domains or ports during development and deployment.
+- [**nodemailer**](https://www.npmjs.com/package/nodemailer) – 📬 A module for Node.js applications to send emails using SMTP. Used in this project to send user-submitted forms directly to your Gmail inbox via secure configuration and app passwords.
 
 ---
 
@@ -409,9 +486,25 @@ I use [🍃 MongoDB](https://www.mongodb.com/) as database solution.
 - 📘 [CORS on MDN](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS) – In-depth explanation of how CORS works in browsers.
 - 🧩 [CORS GitHub Repository](https://github.com/expressjs/cors) – Source code and issues for the middleware.
 
+---
+
+### 💌 Email Functionality
+
+- 📬 [Nodemailer Docs](https://nodemailer.com/about/) – Official documentation for configuring and using Nodemailer in your backend.
+- 🔐 [Google App Password Guide](https://support.google.com/accounts/answer/185833?hl=en) – Required for securely sending email via Gmail SMTP.
+- 🧪 [Nodemailer GitHub](https://github.com/nodemailer/nodemailer) – Source code, examples, and issue tracking.
+
+---
+
 ### 🧪 Testing & Debugging
 
 ---
 
 - 🧪 [Postman](https://www.postman.com/) – powerful tool for testing your API endpoints
 - 🐞 [MongoDB Compass](https://www.mongodb.com/products/compass) – GUI for interacting with your MongoDB database
+
+---
+
+```
+
+```
