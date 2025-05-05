@@ -12,7 +12,6 @@ import {
 import { EditIcon, DeleteIcon } from "@chakra-ui/icons";
 import { useProductStore } from "../store/product";
 import ModalProduct from "./ModalProduct";
-import SimpleParallax from "simple-parallax-js";
 
 const ProductCard = ({ product }) => {
   const textColor = useColorModeValue("yellow.200", "yellow.500");
@@ -52,21 +51,13 @@ const ProductCard = ({ product }) => {
       _hover={{ transform: "translateY(-5px)", shadow: "xl" }}
       bg={bgColor}
     >
-      <SimpleParallax
-        delay={0}
-        orientation={"down"}
-        scale={1.2}
-        overflow
-        maxTransition={60}
-      >
-        <Image
-          src={product.image}
-          alt={product.name}
-          h={48}
-          w="full"
-          objectFit="cover"
-        />
-      </SimpleParallax>
+      <Image
+        src={product.image}
+        alt={product.name}
+        h={48}
+        w="full"
+        objectFit="cover"
+      />
 
       <Box p={4} key={product._id}>
         <Heading as="h3" size="md" mb={2} color={textColor}>
