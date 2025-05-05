@@ -361,6 +361,7 @@ I use [🍃 MongoDB](https://www.mongodb.com/) as database solution.
 - [**dotenv**](https://www.npmjs.com/package/dotenv) – 🌱 Loads environment variables from a `.env` file into `process.env`, keeping sensitive config out of your code.
 - [**nodemon**](https://nodemon.io/) – 🔁 Monitors your source files and restarts the server automatically on changes, speeding up development.
 - [**cross-env**](https://www.npmjs.com/package/cross-env) – 🌎 Allows you to set environment variables across different platforms (Windows, macOS, Linux) in a consistent way.
+- [**cors**](https://www.npmjs.com/package/cors) – 🛡️ Enables [CORS (Cross-Origin Resource Sharing)](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS), allowing your frontend (e.g., running on `localhost:3000`) to communicate securely with your backend (e.g., Express server on `localhost:5000`). This is essential for handling API requests across different domains or ports during development and deployment.
 
 ---
 
@@ -402,7 +403,15 @@ I use [🍃 MongoDB](https://www.mongodb.com/) as database solution.
 
 ---
 
+### 🌐 CORS Integration & Resources
+
+- 🛡️ [CORS NPM Package](https://www.npmjs.com/package/cors) – Official npm package page.
+- 📘 [CORS on MDN](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS) – In-depth explanation of how CORS works in browsers.
+- 🧩 [CORS GitHub Repository](https://github.com/expressjs/cors) – Source code and issues for the middleware.
+
 ### 🧪 Testing & Debugging
+
+---
 
 - 🧪 [Postman](https://www.postman.com/) – powerful tool for testing your API endpoints
 - 🐞 [MongoDB Compass](https://www.mongodb.com/products/compass) – GUI for interacting with your MongoDB database
