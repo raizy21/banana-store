@@ -24,13 +24,12 @@ const PORT = process.env.PORT || 5000; // setting the port to the value from the
 app.use(express.json()); // middleware to parse JSON request bodies allows us to parse JSON request bodies
 
 app.use("/api/products", productRoutes); // using the product routes for the /api/products URL
+// email routes
+app.use("/api/email", emailRoutes);
 
 if (process.env.NODE_ENV === "production") {
   // serve static files
   app.use(express.static(path.join(__dirname, "../frontend/dist")));
-
-  // email routes
-  app.use("/api/email", emailRoutes);
 
   // serve index.html for all unknown routes
   app.get("*", (req, res) => {
