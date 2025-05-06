@@ -1,6 +1,6 @@
 import { FormControl, FormLabel, Input } from "@chakra-ui/react";
 
-const Email = () => {
+const Email = ({ value, onChange }) => {
   return (
     <FormControl id="email" ml={["40%", null, null, 0]}>
       <FormLabel color="yellow.300">email:</FormLabel>
@@ -12,6 +12,8 @@ const Email = () => {
         color="yellow.300"
         placeholder="enter your email"
         required
+        value={value}
+        onChange={(e) => onChange("email", e.target.value)}
       />
     </FormControl>
   );

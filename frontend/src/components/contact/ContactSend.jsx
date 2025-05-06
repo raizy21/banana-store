@@ -1,13 +1,10 @@
 import { Box, Button } from "@chakra-ui/react";
 
-const ContactSend = () => {
-  const handleClick = () => {
-    alert("message and info send!");
-  };
+const ContactSend = ({ onSubmit }) => {
   return (
     <Box>
       <Button
-        onClick={handleClick}
+        onClick={onSubmit}
         type="submit"
         variant="outline"
         colorScheme="yellow.300"
