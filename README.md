@@ -444,7 +444,6 @@ Each document follows this structure:
 
 # 📚 Project Resources
 
----
 
 ### ⚛️ Frontend Technologies
 
@@ -498,13 +497,6 @@ Each document follows this structure:
 
 ### 🧪 Testing & Debugging
 
----
-
 - 🧪 [Postman](https://www.postman.com/) – powerful tool for testing your API endpoints
 - 🐞 [MongoDB Compass](https://www.mongodb.com/products/compass) – GUI for interacting with your MongoDB database
 
----
-
-```
-
-```
