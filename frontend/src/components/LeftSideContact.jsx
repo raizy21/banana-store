@@ -58,7 +58,6 @@ const LeftSideContact = () => {
 
   return (
     <Box
-      as="form"
       w="full"
       display="flex"
       justifyContent="center"

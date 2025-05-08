@@ -1,11 +1,11 @@
 import { Box, Button } from "@chakra-ui/react";
 
-const ContactSend = ({ onSubmit }) => {
+const ContactSend = ({ onClick }) => {
   return (
     <Box>
       <Button
-        onClick={onSubmit}
-        type="submit"
+        onClick={onClick}
+        type="button"
         variant="outline"
         colorScheme="yellow.300"
         color="yellow.300"
