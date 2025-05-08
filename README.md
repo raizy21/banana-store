@@ -6,15 +6,22 @@
 
 # 🛍️ Project Summary: Banana Store
 
-The Banana Store is a simple project built with **Node.js**, **Express.js**, and **MongoDB**.
+The Banana Store is a full-stack project built with **Node.js**, **Express.js**, **MongoDB**, and **Nodemailer**.
 
-It is designed to store and manage product data , including:
+It is designed to store and manage product data, as well as handle customer inquiries, including:
 
-- 🗂️ Product information
+- 🗂️ Product information (name, price, image, timestamps)
+- ✉️ Customer contact forms sent via email
 
-This backend provides a clean and structured API for handling and storing store-related data.
+This backend provides a clean and structured API for:
+
+- **Managing product data** – CRUD operations for products stored in MongoDB
+- **Sending customer messages** – Securely sending form data via Gmail SMTP using Nodemailer
 
 ---
+
+> **ℹ️ Note:**  
+> This project uses **Gmail App Passwords** for secure email sending. Be sure to configure your `.env` file correctly to avoid login errors.
 
 ### 👥 Contributions
 
@@ -122,10 +129,18 @@ The Banana Store is a full-stack application structured into two main parts: a *
 banana-store/
 
 ├── frontend/ # frontend (React)
+│ ├── dist/ # production build output (auto-generated)
 │ ├── node_modules/ # frontend dependencies (auto-generated)
 │ ├── public/ # static public assets
 │ ├── src/ # react source code (components, pages, etc.)
-│ │  └── main.jsx # react app entry point
+│ ├── └── assets/ # static images and styles
+│ ├── └── components/ # reusable UI components and components for UI
+│ ├── └── data/ # static json, constants, and mock data
+│ ├── └── layouts/ # common page layouts (e.g., headers, footers)
+│ ├── └── store/ # global state management (e.g., zustand)
+│ ├── └──pages/ # full pages with route-level components
+│ ├── └── App.jsx # react app entry point with routs and main layout
+│ ├── └── main.jsx # react app entry point
 │ ├── .gitignore # files/folders to ignore in Git
 │ ├── eslint.config.js # eslint configuration
 │ ├── index.html # html template used by Vite
@@ -444,7 +459,6 @@ Each document follows this structure:
 
 # 📚 Project Resources
 
-
 ### ⚛️ Frontend Technologies
 
 - 🌀 [Vite Documentation](https://vitejs.dev/guide/) – Modern build tool that delivers fast development and optimized builds.
@@ -499,4 +513,3 @@ Each document follows this structure:
 
 - 🧪 [Postman](https://www.postman.com/) – powerful tool for testing your API endpoints
 - 🐞 [MongoDB Compass](https://www.mongodb.com/products/compass) – GUI for interacting with your MongoDB database
-
