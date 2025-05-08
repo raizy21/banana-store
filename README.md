@@ -444,6 +444,9 @@ Each document follows this structure:
 - [**@types/react-dom**](https://www.npmjs.com/package/@types/react-dom) – 📘 TypeScript types for ReactDOM.
 - [**globals**](https://www.npmjs.com/package/globals) – 🌐 A set of global variable definitions for ESLint environments.
 - [**Chakra UI Toast**](https://chakra-ui.com/docs/components/toast) – 🔔 A simple, customizable notification system for showing feedback messages in your app using Chakra UI’s `useToast` hook.
+- [**@testing-library/react**](https://testing-library.com/docs/react-testing-library/intro/) – 🧪 Lightweight testing utilities for testing React components.
+- [**@testing-library/jest-dom**](https://testing-library.com/docs/ecosystem-jest-dom/) – 📏 Custom Jest matchers for asserting DOM nodes.
+- [**vitest**](https://vitest.dev/) – 🧪 A blazing fast unit test framework built on Vite.
 
 ---
 
@@ -454,6 +457,8 @@ Each document follows this structure:
 - [**cross-env**](https://www.npmjs.com/package/cross-env) – 🌎 Allows you to set environment variables across different platforms (Windows, macOS, Linux) in a consistent way.
 - [**cors**](https://www.npmjs.com/package/cors) – 🛡️ Enables [CORS (Cross-Origin Resource Sharing)](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS), allowing your frontend (e.g., running on `localhost:3000`) to communicate securely with your backend (e.g., Express server on `localhost:5000`). This is essential for handling API requests across different domains or ports during development and deployment.
 - [**nodemailer**](https://www.npmjs.com/package/nodemailer) – 📬 A module for Node.js applications to send emails using SMTP. Used in this project to send user-submitted forms directly to your Gmail inbox via secure configuration and app passwords.
+- [**jest**](https://jestjs.io/) – 🧪 A comprehensive testing framework with built-in assertions, mocking, and coverage tools.
+- [**supertest**](https://github.com/visionmedia/supertest) – 📮 A library for testing HTTP APIs with great integration for Express.js.
 
 ---
 
@@ -513,3 +518,6 @@ Each document follows this structure:
 
 - 🧪 [Postman](https://www.postman.com/) – powerful tool for testing your API endpoints
 - 🐞 [MongoDB Compass](https://www.mongodb.com/products/compass) – GUI for interacting with your MongoDB database
+- 🧪 [Testing Library Docs](https://testing-library.com/) – Official documentation for testing React components.
+- 🧪 [Jest Docs](https://jestjs.io/docs/getting-started) – Comprehensive guide to testing with Jest.
+- 📮 [Supertest GitHub](https://github.com/visionmedia/supertest) – Source code and examples for testing Express apps.
