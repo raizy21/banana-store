@@ -459,6 +459,9 @@ Each document follows this structure:
 - [**nodemailer**](https://www.npmjs.com/package/nodemailer) – 📬 A module for Node.js applications to send emails using SMTP. Used in this project to send user-submitted forms directly to your Gmail inbox via secure configuration and app passwords.
 - [**jest**](https://jestjs.io/) – 🧪 A comprehensive testing framework with built-in assertions, mocking, and coverage tools.
 - [**supertest**](https://github.com/visionmedia/supertest) – 📮 A library for testing HTTP APIs with great integration for Express.js.
+- [**@babel/core**](https://babeljs.io/docs/en/babel-core) – 🛠️ The core library for Babel, responsible for transforming your modern JavaScript into compatible versions.
+- [**@babel/preset-env**](https://babeljs.io/docs/en/babel-preset-env) – 🧪 A smart preset that allows you to use the latest JavaScript features without worrying about browser support.
+- [**babel-jest**](https://www.npmjs.com/package/babel-jest) – 🔄 A Jest transformer that uses Babel to compile your ES modules and modern JavaScript.
 
 ---
 
@@ -511,6 +514,14 @@ Each document follows this structure:
 - 📬 [Nodemailer Docs](https://nodemailer.com/about/) – Official documentation for configuring and using Nodemailer in your backend.
 - 🔐 [Google App Password Guide](https://support.google.com/accounts/answer/185833?hl=en) – Required for securely sending email via Gmail SMTP.
 - 🧪 [Nodemailer GitHub](https://github.com/nodemailer/nodemailer) – Source code, examples, and issue tracking.
+
+---
+
+### 🛠️ Backend Dev Tools
+
+- 🧪 [Jest Docs](https://jestjs.io/docs/getting-started) – Comprehensive guide to testing with Jest.
+- 📮 [Supertest GitHub](https://github.com/visionmedia/supertest) – Source code and examples for testing Express apps.
+- 🛠️ [Babel Docs](https://babeljs.io/docs/en/) – Official documentation for configuring Babel and transforming your code.
 
 ---
 
