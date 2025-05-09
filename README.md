@@ -157,10 +157,11 @@ banana-store/
 ├── node_modules/ # node.js dependencies (auto-generated)
 ├── .env # environment variables (e.g., MONGO_URI)
 ├── .gitignore # ignored files and folders for Git
-├── logo.png   # logo for this app
+├── README.md # project documentation (this file)
+├── babel.config.js # babel configuration for ES module support
+├── jest.config.js # jest configuration for testing
 ├── package-lock.json # exact version lock for installed dependencies
 ├── package.json # project metadata, dependencies, and scripts
-├── README.md # project documentation (this file)
 ```
 
 ---
