@@ -184,23 +184,62 @@ banana-store/
 
 All data models are defined in the `models/` folder using [Mongoose](https://mongoosejs.com/).
 
-Example: **Product Model** (`models/Product.js`)
+Example: **Product Model** (`models/product.model.js`)
 
 ```js
-const ProductSchema = new mongoose.Schema({
-  name: {
-    type: String,
-    required: true,
+const productSchema = mongoose.Schema(
+  {
+    name: {
+      type: String,
+      required: true,
+    },
+    price: {
+      type: Number,
+      required: true,
+    },
+    image: {
+      type: String,
+      required: true,
+    },
   },
-  price: {
-    type: Number,
-    required: true,
+  {
+    timestamps: true,
+  }
+);
+```
+
+Example: **Email Model** (`models/email.model.js`)
+
+```js
+const emailSchema = mongoose.Schema(
+  {
+    firstName: {
+      type: String,
+      required: true,
+    },
+    secondName: {
+      type: String,
+      required: true,
+    },
+    email: {
+      type: String,
+    },
+    phone: {
+      type: String,
+    },
+    message: {
+      type: String,
+      required: true,
+    },
+    plan: {
+      type: String,
+      enum: ["basic", "ripe", "royale"],
+    },
   },
-  image: {
-    type: String,
-    required: true,
-  },
-});
+  {
+    timestamps: true,
+  }
+);
 ```
 
 ## 📡 API Endpoints Overview
@@ -398,6 +437,25 @@ Each document follows this structure:
   "image": "https://plus.unsplash.com/premium_photo-1664304188646-47b168d698aa?w=600",
   "createdAt": "2025-05-02T06:15:53.419Z",
   "updatedAt": "2025-05-02T06:15:53.419Z",
+  "__v": 0
+}
+```
+
+#### 🗂️ Example Collection: `emails`
+
+Each document follows this structure:
+
+```json
+{
+  "_id": "681ed759baed9468249d5547",
+  "firstName": "razvan",
+  "lastName": "andrei",
+  "email": "chiperraizy21@gmail.com",
+  "phone": 0123456789,
+  "message": "a banana message",
+  "plan": "royale",
+  "createdAt": "2025-05-10T04:34:33.419Z",
+  "updatedAt": "2025-05-10T04:34:33.419Z",
   "__v": 0
 }
 ```
