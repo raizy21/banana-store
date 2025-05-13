@@ -152,6 +152,7 @@ banana-store/
 │ ├── controllers/ # route logic and request handling (e.g., product.controller.js)
 │ ├── models/ # Mongoose models for MongoDB (e.g., product.model.js)
 │ ├── routes/ # Express route definitions (e.g., product.route.js)
+│ ├── test/ # contains the unit test
 │ ├── utils/  # Utility modules (e.g., sendEmail.js for mailing logic, envLoader.js for dotenv config)
 │ └── server.js # Main entry point for the backend server
 ├── node_modules/ # node.js dependencies (auto-generated)

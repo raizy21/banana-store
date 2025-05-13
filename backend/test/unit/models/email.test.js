@@ -48,7 +48,7 @@ describe("email model", () => {
 
     /* assertions: mongoose returns the same values + generated _id */
     expect(saved._id).toBeDefined(); // _id created
-    expect(saved.firstName).toBe(payload.firstName); // fields match
+    expect(saved.firstName).toBe(payload.firstName);
     expect(saved.secondName).toBe(payload.secondName);
     expect(saved.email).toBe(payload.email);
     expect(saved.phone).toBe(payload.phone);
