@@ -8,4 +8,7 @@ const __dirname = path.dirname(__filename); // getting the directory name of the
 export const loadEnv = () => {
   // defining the loadEnv function to load environment variables
   dotenv.config({ path: path.resolve(__dirname, "../../.env") }); // loading the .env file
+  const envFile = process.env.NODE_ENV === "test" ? ".env.test" : ".env";
+  const envPath = path.resolve(__dirname, `../../${envFile}`);
+  dotenv.config({ path: envPath });
 }; // end of loadEnv function
