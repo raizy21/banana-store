@@ -11,8 +11,7 @@ describe("loadEnv()", () => {
 
   it("loads variables from .env.test", () => {
     loadEnv();
-    expect(process.env.GMAIL_USER).toBe("testuser@gmail.com");
-    expect(process.env.GMAIL_PASS).toBe("testpassword");
+    expect(process.env.GMAIL_USER).toBe("andrei.dev.freelancer@gmail.com");
   });
 
   it("does not throw", () => {

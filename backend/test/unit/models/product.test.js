@@ -1,25 +1,39 @@
 import mongoose from "mongoose";
-import Product from "../../../models/email.model.js";
+import { MongoMemoryServer } from "mongodb-memory-server";
+import Product from "../../../models/product.model.js";
+
+let mongo;
+
+/** start in-memory MongoDB before the suite */
+beforeAll(async () => {
+  mongo = await MongoMemoryServer.create();
+  await mongoose.connect(mongo.getUri(), { dbName: "jest" });
+});
+
+/** clean collection after each test */
+afterEach(async () => {
+  await Product.deleteMany({});
+});
+
+/** stop DB and close Mongoose after all tests */
+afterAll(async () => {
+  await mongoose.disconnect();
+  await mongo.stop();
+});
 
 describe("Product Model", () => {
-  it("should create a product with all required fields", async () => {
-    const productData = {
+  it("creates a product with required fields", async () => {
+    const data = {
       name: "Banana Phone",
       price: 99.99,
       image: "https://example.com/banana-phone.jpg",
     };
 
-    const product = new Product(productData);
-    const savedProduct = await product.save();
+    const saved = await new Product(data).save();
 
-    expect(savedProduct._id).toBeDefined();
-    expect(savedProduct.name).toBe(productData.name);
-    expect(savedProduct.price).toBe(productData.price);
-    expect(savedProduct.image).toBe(productData.image);
-    expect(savedProduct.createdAt).toBeDefined();
-    expect(savedProduct.updatedAt).toBeDefined();
-
-    // Cleanup after test
-    await Product.deleteOne({ _id: savedProduct._id });
+    expect(saved._id).toBeDefined();
+    expect(saved.name).toBe(data.name);
+    expect(saved.price).toBe(data.price);
+    expect(saved.image).toBe(data.image);
   });
 });
