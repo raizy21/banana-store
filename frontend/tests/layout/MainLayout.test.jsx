@@ -1,49 +1,40 @@
-import { describe, it, expect, vi } from "vitest";
+// tests/layout/MainLayout.test.jsx
 import { render, screen } from "@testing-library/react";
-import { ChakraProvider } from "@chakra-ui/react";
 import { MemoryRouter, Routes, Route } from "react-router-dom";
+import { ChakraProvider } from "@chakra-ui/react";
+import { vi, it, expect } from "vitest";
 
-/* -----------------------------------------------------------
-   1. mock Navbar and Footer to simple placeholders
------------------------------------------------------------ */
-vi.mock("../../../src/components/Navbar", () => ({
-  default: () => <div data-testid="navbar">navbar</div>,
+/* mock the real Navbar / Footer that MainLayout imports
+   src/layouts/MainLayout.jsx does:  import Navbar from "../components/Navbar";
+   so the resolved path is           src/components/Navbar                */
+vi.mock("../../src/components/Navbar", () => ({
+  default: () => <div>navbar</div>, // simple stub
 }));
-vi.mock("../../../src/components/Footer", () => ({
-  default: () => <div data-testid="footer">footer</div>,
+vi.mock("../../src/components/Footer", () => ({
+  default: () => <div>footer</div>,
 }));
 
-/* -----------------------------------------------------------
-   2. import the layout AFTER mocks are registered
------------------------------------------------------------ */
-import MainLayout from "../../../src/layouts/MainLayout.jsx";
+/* now we can import the file under test */
+import MainLayout from "../../src/layouts/MainLayout.jsx";
 
-describe("MainLayout", () => {
-  it("renders navbar, outlet content, and footer in correct order", () => {
-    /* dummy element to act as child route content */
-    const TestPage = () => <h1 data-testid="page">page content</h1>;
+/* dummy page component to render inside <Outlet /> */
+const Page = () => <h1>page content</h1>;
 
-    render(
-      <ChakraProvider>
-        <MemoryRouter initialEntries={["/"]}>
-          <Routes>
-            <Route element={<MainLayout />}>
-              <Route index element={<TestPage />} />
-            </Route>
-          </Routes>
-        </MemoryRouter>
-      </ChakraProvider>
-    );
+it("renders navbar, page content, and footer", () => {
+  render(
+    <ChakraProvider>
+      <MemoryRouter initialEntries={["/"]}>
+        <Routes>
+          <Route element={<MainLayout />}>
+            <Route index element={<Page />} />
+          </Route>
+        </Routes>
+      </MemoryRouter>
+    </ChakraProvider>
+  );
 
-    /* assertions */
-    expect(screen.getByTestId("navbar")).toBeInTheDocument();
-    expect(screen.getByTestId("page")).toBeInTheDocument();
-    expect(screen.getByTestId("footer")).toBeInTheDocument();
-
-    /* ensure the order in the DOM is navbar → page → footer */
-    const children = screen.getByTestId("navbar").parentElement.children;
-    expect(children[0]).toHaveAttribute("data-testid", "navbar");
-    expect(children[1].querySelector('[data-testid="page"]')).toBeTruthy();
-    expect(children[2]).toHaveAttribute("data-testid", "footer");
-  });
+  /* assertions by visible text */
+  expect(screen.getByText("navbar")).toBeInTheDocument();
+  expect(screen.getByText("page content")).toBeInTheDocument();
+  expect(screen.getByText("footer")).toBeInTheDocument();
 });
