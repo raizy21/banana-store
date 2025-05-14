@@ -12,4 +12,9 @@ export default defineConfig({
     },
     port: 3000,
   },
+  test: {
+    environment: "jsdom",
+    setupFiles: "./vitest.setup.js",
+    include: ["tests/**/*.{test,spec}.{js,jsx,ts,tsx}"],
+  },
 });
